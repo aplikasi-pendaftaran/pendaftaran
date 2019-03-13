@@ -35,11 +35,6 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-        </dependency>
-        
     </dependencies>
 
     <build>
