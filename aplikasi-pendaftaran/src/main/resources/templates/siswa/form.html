@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Edit Peserta</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        
+        <div th:fragment="content">
+        
+        <h1>Edit Peserta</h1>
+        
+        <form action="#" th:action="@{/peserta/form}" th:object="${peserta}" 
+              method="post" enctype="multipart/form-data">
+            
+            <table class="table table-condensed table-striped">
+                
+                <tbody>
+                    <tr>
+                        <td>Nama</td>
+                        <td><input type="text" class="form-control" th:field="*{nama}"
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan nama"/>                           
+                         <div class="invalid-feedback" 
+                     th:if="${#fields.hasErrors('nama')}" th:errors="*{nama}">
+                    Nama tidak boleh kosong
+                </div>
+                        </td>
+              
+                    </tr>
+                    
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="text" class="form-control" th:field="*{email}"
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan email"/>                           
+                         <div class="invalid-feedback" 
+                     th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                    Email tidak boleh kosong
+                </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td><input type="text" class="form-control" th:field="*{tanggalLahir}"
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan tanggalLahir"/>                           
+                         <div class="invalid-feedback" 
+                     th:if="${#fields.hasErrors('tanggalLahir')}" th:errors="*{tanggalLahir}">
+                    Isilah Tanggal dengan sesuai
+                </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Foto</td>
+                        <td><input type="file" name="foto"/></td>
+                        <td>&nbsp;</td> 
+                    </tr>
+                    
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" value ="Simpan" /></td>
+                        <td>&nbsp;</td> 
+                    </tr>
+                </tbody>
+                
+            </table>
+            
+        </form>
+        </div>
+        
+    </body>
+</html>
