@@ -16,7 +16,7 @@
                 <table class="table table-condensed table-striped">
 
                     <tbody>
-                        
+
                         <tr>
                             <td>NIS</td>
                             <td><input type="text" class="form-control" th:field="*{nis}"
@@ -29,7 +29,7 @@
                             </td>
 
                         </tr>
-                        
+
                         <tr>
                             <td>Nama</td>
                             <td><input type="text" class="form-control" th:field="*{nama}"
@@ -42,8 +42,8 @@
                             </td>
 
                         </tr>
-                        
-                        
+
+
                         <tr>
                             <td>Tanggal Lahir</td>
                             <td><input type="text" class="form-control" th:field="*{tanggalLahir}"
@@ -60,8 +60,8 @@
                         <tr>
                             <td>Alamat</td>
                             <td><textarea class="form-control" th:field="*{alamat}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan alamat"></textarea>                          
+                                          th:errorclass="is-invalid"
+                                          placeholder="masukan alamat"></textarea>                          
                                 <div class="invalid-feedback" 
                                      th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}">
                                     alamat tidak boleh kosong
@@ -76,11 +76,11 @@
                                        placeholder="masukan agama"/>                           
                                 <div class="invalid-feedback" 
                                      th:if="${#fields.hasErrors('agama')}" th:errors="*{agama}">
-                                    
+
                                 </div>
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td>Jenis Kelamin</td>
                             <td><input type="text" class="form-control" th:field="*{jenisKelamin}"
@@ -88,16 +88,40 @@
                                        placeholder="masukan jenis kelamin"/>                           
                                 <div class="invalid-feedback" 
                                      th:if="${#fields.hasErrors('jenisKelamin')}" th:errors="*{jenisKelamin}">
-                                    
+
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Asal Sekolah</td>
+                            <td><input type="text" class="form-control" th:field="*{asalSekolah}"
+                                       th:errorclass="is-invalid"
+                                       placeholder="asal sekolah"/>                           
+                                <div class="invalid-feedback" 
+                                     th:if="${#fields.hasErrors('asalSekolah')}" th:errors="*{asalSekolah}">
+
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Nilai</td>
+                            <td><input type="text" class="form-control" th:field="*{nilaiAnda}"
+                                       th:errorclass="is-invalid"
+                                       placeholder="masukan Nilai"/>                           
+                                <div class="invalid-feedback" 
+                                     th:if="${#fields.hasErrors('nilaiAnda')}" th:errors="*{nilaiAnda}">
+
                                 </div>
                             </td>
                         </tr>
 
-                        
+
 
                         <tr>
                             <td>&nbsp;</td>
-                            <td><input type="submit" value ="Simpan" /></td>
+                            <td><input type="submit" value ="Kirim" /></td>
                             <td>&nbsp;</td> 
                         </tr>
                     </tbody>

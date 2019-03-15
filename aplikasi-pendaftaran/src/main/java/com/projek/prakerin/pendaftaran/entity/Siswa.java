@@ -3,14 +3,23 @@ package com.projek.prakerin.pendaftaran.entity;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Siswa {
 
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
 
     public String getId() {
         return id;
@@ -75,34 +84,40 @@ public class Siswa {
     public void setNilai(int nilai) {
         this.nilai = nilai;
     }
-    
-    @Id
-    private String id; 
-    
+
     @Column(nullable = false, unique = true)
-    private int nis;   
+    @NotNull
+    @NotEmpty
+    private int nis;
+
+    @Column(nullable = false)
+    @NotNull
+    @NotEmpty
+    @Size(min = 3, max = 150)
+    private String nama;
+
+    @Column(nullable = false)
+    private String alamat;
     
     @Column(nullable = false)
-    private String nama;    
-    
-    @Column(nullable = false)
-    private String alamat;   
-    
+    private String agama;
+
     @Column(name = "tanggal_lahir", nullable = false)
     @Temporal(TemporalType.DATE)
+    @Past
+    @NotNull
     private Date tanggalLahir;
-    
-    @Column(nullable = false)
-    private String jenisKelamin; 
-    
-    @Column(nullable = false)
-    private String asalSekolah;  
 
-    @Column(nullable = false)    
+    @Column(nullable = false)
+    @NotNull
+    private String jenisKelamin;
+
+    @Column(nullable = false)
+    @NotNull
+    private String asalSekolah;
+
+    @Column(nullable = false)
+    @NotNull
     private int nilai;
-    
-    
-    
-    
-    
+
 }
