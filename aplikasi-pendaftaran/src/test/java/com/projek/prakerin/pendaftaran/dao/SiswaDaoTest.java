@@ -70,7 +70,7 @@ public class SiswaDaoTest {
         @Test
     public void testHitung(){
         Long jumlah = sd.count();
-        Assert.assertEquals(2L, jumlah.longValue());
+        Assert.assertEquals(3L, jumlah.longValue());
         
     }
     

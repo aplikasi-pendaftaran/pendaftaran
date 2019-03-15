@@ -86,10 +86,20 @@ public class Siswa {
     public void setNilai(int nilai) {
         this.nilai = nilai;
     }
+    public String getAgama() {
+        return agama;
+    }
+
+    public void setAgama(String agama) {
+        this.agama = agama;
+    }
+
+   
 
     @Column(nullable = false, unique = true)
     @NotNull
     @NotEmpty
+    @Range(min=0, max=90)
     private Integer nis;
 
     @Column(nullable = false)
@@ -105,15 +115,7 @@ public class Siswa {
     @NotNull 
     private String agama;
 
-    public String getAgama() {
-        return agama;
-    }
-
-    public void setAgama(String agama) {
-        this.agama = agama;
-    }
-
-    @Column(name = "tanggal_lahir", nullable = false)
+     @Column(name = "tanggal_lahir", nullable = false)
     @Temporal(TemporalType.DATE)
     @Past
     @NotNull
