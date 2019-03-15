@@ -30,15 +30,6 @@ public class Siswa {
         this.id = id;
     }
 
-    public Integer getNis() {
-        return nis;
-    }
-
-    public void setNis(Integer nis) {
-        this.nis = nis;
-    }
-
-
     public String getNama() {
         return nama;
     }
@@ -94,13 +85,19 @@ public class Siswa {
         this.agama = agama;
     }
 
-   
+    public int getNis() {
+        return nis;
+    }
 
+    public void setNis(int nis) {
+        this.nis = nis;
+    }
+  
     @Column(nullable = false, unique = true)
     @NotNull
     @NotEmpty
     @Range(min=0, max=90)
-    private Integer nis;
+    private int nis;
 
     @Column(nullable = false)
     @NotNull

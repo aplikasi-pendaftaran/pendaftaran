@@ -15,34 +15,35 @@
                             <tr>
                                 <th><a class="sorted" sd:pagination-sort="nis" >Nis</a></th>
                                 <th><a class="sorted" sd:pagination-sort="nama" >Nama</a></th>
-                                <th><a class="sorted" sd:pagination-sort="tanggal" >Tanggal Lahir</a></th>
                                 <th><a class="sorted" sd:pagination-sort="alamat" >Alamat</a></th>
                                 <th><a class="sorted" sd:pagination-sort="agama" >Agama</a></th>
-                                <th><a class="sorted" sd:pagination-sort="gender" >Jenis Kelamin</a></th>
-                                <th><a class="sorted" sd:pagination-sort="asal" >Asal Sekolah</a></th>
+                                <th><a class="sorted" sd:pagination-sort="tanggal" >Tanggal Lahir</a></th>                               
+                                <th><a class="sorted" sd:pagination-sort="jenisKelamin" >Jenis Kelamin</a></th>
+                                <th><a class="sorted" sd:pagination-sort="asalSekolah" >Asal Sekolah</a></th>
                                 <th><a class="sorted" sd:pagination-sort="nilai" >Nilai</a></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="p : ${daftarPeserta}">
-                                <td th:text="${p.nis}">poi</td>
-                                <td th:text="${p.nama}">poi0989@gmail.com</td>
-                                <td th:text="${p.tanggalLahir}">2003-07-13</td>
-                                <td th:text="${p.alamat}">bekasii</td>
-                                <td th:text="${p.gender}">perempuan</td>
-                                <td th:text="${p.asal}">tk berlian</td>
-                                <td th:text="${p.nilai}">50.22</td>
+                            <tr th:each="s : ${daftarSiswa}">
+                                <td th:text="${s.nis}">poi</td>
+                                <td th:text="${s.nama}">poi0989@gmail.com</td>
+                                <td th:text="${s.agama}">islam</td>
+                                <td th:text="${s.tanggalLahir}">2003-07-13</td>
+                                <td th:text="${s.alamat}">bekasii</td>
+                                <td th:text="${s.jenisKelamin}">perempuan</td>
+                                <td th:text="${s.asalSekolah}">tk berlian</td>
+                                <td th:text="${s.nilai}">50.22</td>
                                 <td>
-                                    <a href="form.html" th:href="@{/siswa/form(id=${p.id})}">
+                                    <a href="form.html" th:href="@{/siswa/form(id=${s.id})}">
                                         Edit
                                     </a>|
 
-                                    <a href="view.html" th:href="@{/siswa/view(id=${p.id})}">
+                                    <a href="view.html" th:href="@{/siswa/view(id=${s.id})}">
                                         Lihat
                                     </a>| 
 
-                                    <a href="hapus.html" th:href="@{/siswa/hapus(id=${p.id})}">
+                                    <a href="hapus.html" th:href="@{/siswa/hapus(id=${s.id})}">
                                         Hapus
                                     </a>
 
