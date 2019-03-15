@@ -12,6 +12,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 public class Siswa {
@@ -29,13 +30,14 @@ public class Siswa {
         this.id = id;
     }
 
-    public int getNis() {
+    public Integer getNis() {
         return nis;
     }
 
-    public void setNis(int nis) {
+    public void setNis(Integer nis) {
         this.nis = nis;
     }
+
 
     public String getNama() {
         return nama;
@@ -88,7 +90,7 @@ public class Siswa {
     @Column(nullable = false, unique = true)
     @NotNull
     @NotEmpty
-    private int nis;
+    private Integer nis;
 
     @Column(nullable = false)
     @NotNull
@@ -100,7 +102,16 @@ public class Siswa {
     private String alamat;
     
     @Column(nullable = false)
+    @NotNull 
     private String agama;
+
+    public String getAgama() {
+        return agama;
+    }
+
+    public void setAgama(String agama) {
+        this.agama = agama;
+    }
 
     @Column(name = "tanggal_lahir", nullable = false)
     @Temporal(TemporalType.DATE)

@@ -10,91 +10,72 @@
 
     </head>
     <body>
-        <div class="container">
-            <header class="blog-header py-3">
-                <div class="row flex-nowrap justify-content-between align-items-center">
-                    <div class="col-4 pt-1">
-                        <a class="text-muted" href="#">Log in</a>
-                    </div>
-                    <div class="col-4 text-center">
-                        <a class="blog-header-logo text-dark" href="#">Pendaftaran</a>
-                    </div>
-                    <div class="col-4 d-flex justify-content-end align-items-center">
-                        <a class="text-muted" href="#">Log out</a>
-                    </div>
-                </div>
-            </header>
-
-            <div class="progress" style="height: 1px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br/>
-            <div class="d-flex" id="wrapper">
-                <div class="bg-light border-right" id="sidebar-wrapper">
-                    <div class="sidebar-heading">Start Bootstrap </div>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-                    </div>
-                </div>
-
-                <div class="container-fluid">
-                    <table class="table table-striped">
+        <div class="container">       
+            <div class="container-fluid">
+                <div th:fragment="content">
+                    <table class="table table-condensed table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th><a class="sorted" sd:pagination-sort="nis" >Nis</a></th>
+                                <th><a class="sorted" sd:pagination-sort="nama" >Nama</a></th>
+                                <th><a class="sorted" sd:pagination-sort="tanggal" >Tanggal Lahir</a></th>
+                                <th><a class="sorted" sd:pagination-sort="alamat" >Alamat</a></th>
+                                <th><a class="sorted" sd:pagination-sort="agama" >Agama</a></th>
+                                <th><a class="sorted" sd:pagination-sort="gender" >Jenis Kelamin</a></th>
+                                <th><a class="sorted" sd:pagination-sort="asal" >Asal Sekolah</a></th>
+                                <th><a class="sorted" sd:pagination-sort="nilai" >Nilai</a></th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
+                            <tr th:each="p : ${daftarPeserta}">
+                                <td th:text="${p.nis}">poi</td>
+                                <td th:text="${p.nama}">poi0989@gmail.com</td>
+                                <td th:text="${p.tanggalLahir}">2003-07-13</td>
+                                <td th:text="${p.alamat}">bekasii</td>
+                                <td th:text="${p.gender}">perempuan</td>
+                                <td th:text="${p.asal}">tk berlian</td>
+                                <td th:text="${p.nilai}">50.22</td>
+                                <td>
+                                    <a href="form.html" th:href="@{/siswa/form(id=${p.id})}">
+                                        Edit
+                                    </a>|
+
+                                    <a href="view.html" th:href="@{/siswa/view(id=${p.id})}">
+                                        Lihat
+                                    </a>| 
+
+                                    <a href="hapus.html" th:href="@{/siswa/hapus(id=${p.id})}">
+                                        Hapus
+                                    </a>
+
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div sd:pagination-summary="">info</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <nav class="pull-right">
+                                <ul class="pagination" sd:pagination="full">
+                                    <!-- Pagination created by SpringDataDialect, this content is just for mockup -->
+                                    <li class="disabled"><a href="#" aria-label="Previous"><span
+                                                aria-hidden="true">&laquo;</span></a></li>
+                                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">2 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">3 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">4 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">5 <span class="sr-only">(current)</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
         </div>
-    </body>
+</body>
 </html>

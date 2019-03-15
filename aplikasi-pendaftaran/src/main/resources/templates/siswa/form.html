@@ -107,11 +107,11 @@
                         
                         <tr>
                             <td>Nilai</td>
-                            <td><input type="text" class="form-control" th:field="*{nilaiAnda}"
+                            <td><input type="text" class="form-control" th:field="*{nilai}"
                                        th:errorclass="is-invalid"
                                        placeholder="masukan Nilai"/>                           
                                 <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('nilaiAnda')}" th:errors="*{nilaiAnda}">
+                                     th:if="${#fields.hasErrors('nilai')}" th:errors="*{nilai}">
 
                                 </div>
                             </td>
