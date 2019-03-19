@@ -19,30 +19,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class SiswaController {
 
     @Autowired
-    private SiswaDao pd;
+    private SiswaDao sd;
 
     @RequestMapping(value = "/siswa", method = RequestMethod.GET)
-    public Page<Siswa> cariPeserta(Pageable page) {
-        return pd.findAll(page);
+    public Page<Siswa> cariSiswa(Pageable page) {
+        return sd.findAll(page);
     }
 
     @RequestMapping(value = "/siswa", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void insertPesertaBaru(@RequestBody @Valid Siswa p) {
-        pd.save(p);
+    public void insertSiswaBaru(@RequestBody @Valid Siswa s) {
+        sd.save(s);
     }
 
     @RequestMapping(value = "/siswa/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
-    public void updatePeserta(@PathVariable("id") String id, @RequestBody @Valid Siswa p) {
-        p.setId(id);
-        pd.save(p);
+    public void updateSiswa(@PathVariable("id") String id, @RequestBody @Valid Siswa s) {
+        s.setId(id);
+        sd.save(s);
     }
 
     @RequestMapping(value = "/siswa/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Siswa> cariSiswaById(@PathVariable("id") String id) {
-        Siswa hasil = pd.findById("sw001").get();
+        Siswa hasil = sd.findById("sw001").get();
         if (hasil == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
