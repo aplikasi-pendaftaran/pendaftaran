@@ -62,7 +62,7 @@ public class SiswaDaoTest {
             Assert.assertTrue(rs.next());
             
             Long jumlahRow = rs .getLong("jumlah");
-            Assert.assertEquals(0L, jumlahRow.longValue());
+            Assert.assertEquals(1L, jumlahRow.longValue());
         }
         
     }
