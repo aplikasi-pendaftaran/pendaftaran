@@ -1,14 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.projek.prakerin.pendaftaran.entity;
 
-/**
- *
- * @author HP
- */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Siswa {
+    @Id
+    private String id;
+    private String nis;
+    private String nama;
+    private String tanggalLahir;
+    private String jenisKelamin;
+    private String alamat;
+    private String agama;
+    private String nilai;
     
 }
