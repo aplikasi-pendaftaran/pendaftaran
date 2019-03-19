@@ -25,7 +25,7 @@ public class Siswa {
     @Temporal(TemporalType.DATE)
     private Date tanggalLahir;
     
-    @Column(unique = true)
+    @Column(nullable = false)
     private String jenisKelamin;
     
     @Column(nullable = false)
