@@ -1,6 +1,6 @@
 package com.projek.prakerin.pendaftaran.dao;
 
-import com.alya.puteri.pelatihan.entity.Siswa;
+import com.projek.prakerin.pendaftaran.entity.Siswa;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,14 +42,14 @@ public class SiswaDaoTest {
     @Test        
     public void testInsert() throws SQLException{
         Siswa s = new Siswa();
-        s.setNis("112233");
-        s.setNama("puteri");
-        s.setTanggalLahir(new Date());
-        s.setJenisKelamin("perempuan");
-        s.setAlamat("bekasi");
         s.setAgama("islam");
+        s.setAlamat("bekasi");
+        s.setJenisKelamin("perempuan");
+        s.setNama("puteri");
         s.setNilai("80");
-        
+        s.setNis("112233");        
+        s.setTanggalLahir(new Date());
+ 
         sd.save(s);
    
         
@@ -62,14 +62,14 @@ public class SiswaDaoTest {
             Assert.assertTrue(rs.next());
             
             Long jumlahRow = rs .getLong("jumlah");
-            Assert.assertEquals(1L, jumlahRow.longValue());
+            Assert.assertEquals(0L, jumlahRow.longValue());
         }
         
     }
     @Test
     public void testHitung(){
         Long jumlah = sd.count();
-        Assert.assertEquals(3L, jumlah.longValue());
+        Assert.assertEquals(2L, jumlah.longValue());
         
     }
     
