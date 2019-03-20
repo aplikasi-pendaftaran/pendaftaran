@@ -39,12 +39,10 @@ public class Siswa {
     @Column(nullable = false)
     private String agama;
 
+    @NotNull
     @Column(nullable = false)
     private String nilai;
 
-//    @Column(nullable = false)
-//    @OrderBy()
-//    private String nilai;
     public String getId() {
         return id;
     }
