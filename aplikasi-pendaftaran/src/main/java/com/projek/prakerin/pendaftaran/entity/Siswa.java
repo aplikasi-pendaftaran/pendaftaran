@@ -21,7 +21,6 @@ public class Siswa {
     @Column(nullable = false)
     private String nama;
     
-    @Column(name = "tanggal_lahir", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date tanggalLahir;
     

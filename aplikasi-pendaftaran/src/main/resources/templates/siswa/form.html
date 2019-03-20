@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Siswa</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Edit siswa</h1>
+        <form action="#" th:action="@{/siswa/form}" th:object="${siswa}" 
+                  method="post" enctype="multipart/form-data">
+           <table class="table table-condensed table-striped">
+
+                    <tbody>
+                        
+                        <tr>
+                            <td>NIS</td>
+                            <td><input type="text" class="form-control" th:field="*{nis}" th:errorclass="is-invalid" placeholder="NIS siswa" />
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('nis')}" th:errors="*{nis}">
+                                    Nis harus ada!
+                                </div> 
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Nama</td>
+                            <td><input type="text" class="form-control" th:field="*{nama}" th:errorclass="is-invalid" placeholder="Nama Siswa" />
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('nama')}" th:errors="*{nama}">
+                                    Nama Peserta harus diisi!
+                                </div> 
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Tanggal lahir</td>
+                            <td><input type="date" class="form-control" th:field="*{tanggalLahir}" th:errorclass="is-invalid" placeholder="Tanggal Lahir"/>
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('tanggalLahir')}" th:errors="*{tanggalLahir}">
+                                    Masukan tanggal Lahir peserta!
+                                </div> 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td><input type="text" class="form-control" th:field="*{jenisKelamin}" th:errorclass="is-invalid" placeholder="jenisKelamin"/>
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('jenisKelamin')}" th:errors="*{jenisKelamin}">
+                                    Silahkan masukan jenisKelamin
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Alamat</td>
+                            <td><input type="text" class="form-control" th:field="*{alamat}" th:errorclass="is-invalid" placeholder="alamat"/>
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}">
+                                   masukan sesuai alamat siswa
+                                </div> 
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Agama</td>
+                            <td><input type="text" class="form-control" th:field="*{agama}" th:errorclass="is-invalid" placeholder="agama"/>
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('agama')}" th:errors="*{agama}">
+                                   masukan sesuai agama siswa
+                                </div> 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Nilai</td>
+                           <td><input type="text" class="form-control" th:field="*{nilai}" th:errorclass="is-invalid" placeholder="nilai"/>
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('nilai')}" th:errors="*{nilai}">
+                                   masukan sesuai nilai siswa
+                                </div> 
+                            </td> 
+                        </tr>
+
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input type="submit" value ="Simpan" class="btn btn-primary" /></td>
+                            <td>&nbsp;</td> 
+                        </tr>
+                    </tbody>
+
+                </table>
+
+        </form>
+    </body>
+</html>
