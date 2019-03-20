@@ -13,7 +13,7 @@ public class AplikasiPendaftaranApplication {
 	}
         
         @Bean
-    public SpringDataDialect springDataDialect() {
+        public SpringDataDialect springDataDialect() {
         return new SpringDataDialect();
     }
 
