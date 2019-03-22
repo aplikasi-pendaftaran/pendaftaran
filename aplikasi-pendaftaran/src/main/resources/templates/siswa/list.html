@@ -1,44 +1,53 @@
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Pendaftaran Sekolah</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
+
     <body>
-
         <div th:fragment="content">
-
-            <div class="container">  
+            <div class="container">       
                 <div class="container-fluid">
 
                     <table class="table table-condensed table-striped">
                         <thead>
                             <tr>
-                                <th><a class="sorted" sd:pagination-sort="nis">NIS</a></th>
+                                <th><a class="sorted" sd:pagination-sort="nis">Nis</a></th>
                                 <th><a class="sorted" sd:pagination-sort="nama">Nama</a></th>
-                                <th><a class="sorted" sd:pagination-sort="tanggalLahir">Tanggal Lahir</a></th>
-                                <th><a class="sorted" sd:pagination-sort="jenisKelamin">Jenis Kelamin</a></th>
                                 <th><a class="sorted" sd:pagination-sort="alamat">Alamat</a></th>
                                 <th><a class="sorted" sd:pagination-sort="agama">Agama</a></th>
+                                <th><a class="sorted" sd:pagination-sort="tanggalLahir">Tanggal Lahir</a></th>                               
+                                <th><a class="sorted" sd:pagination-sort="jenisKelamin">Jenis Kelamin</a></th>
+                                <th><a class="sorted" sd:pagination-sort="asalSekolah">Asal Sekolah</a></th>
                                 <th><a class="sorted" sd:pagination-sort="nilai">Nilai</a></th>
-                                <th>Pilihan</th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="s : ${daftarSiswa}">
-                                <td th:text="${s.nis}">171810222</td>
-                                <td th:text="${s.nama}">april</td>
-                                <td th:text="${s.tanggalLahir}">2002-04-05</td>
+                                <td th:text="${s.nis}">poi</td>
+                                <td th:text="${s.nama}">poi0989@gmail.com</td>
+                                <td th:text="${s.alamat}">bekasii</td>
+                                <td th:text="${s.agama}">islam</td>
+                                <td th:text="${s.tanggalLahir}">2003-07-13</td>
                                 <td th:text="${s.jenisKelamin}">perempuan</td>
-                                <td th:text="${s.alamat}">Bekasi</td>
-                                <td th:text="${s.agama}">Non muslim</td>
-                                <td th:text="${s.nilai}">60</td>
+                                <td th:text="${s.asalSekolah}">tk berlian</td>
+                                <td th:text="${s.nilai}">50.22</td>
                                 <td>
-                                    <a href="form.html" th:href="@{/siswa/form(id=${s.id})}">  Edit </a>
-                                    | 
-                                    <a href="view.html" th:href="@{/siswa/view(id=${s.id})}">  Lihat </a>
-                                    | 
-                                    <a href="hapus.html" th:href="@{/siswa/hapus(id=${s.id})}">  Hapus </a>
+                                    <a href="form.html" th:href="@{/siswa/form(id=${s.id})}">
+                                        Edit
+                                    </a>|
+
+                                    <a href="view.html" th:href="@{/siswa/view(id=${s.id})}">
+                                        Lihat
+                                    </a>| 
+
+                                    <a href="hapus.html" th:href="@{/siswa/hapus(id=${s.id})}">
+                                        Hapus
+                                    </a>
+
+
                                 </td>
                             </tr>
                         </tbody>
@@ -51,7 +60,7 @@
                         <div class="col-sm-6">
                             <nav class="pull-right">
                                 <ul class="pagination" sd:pagination="full">
-<!--                                     Pagination created by SpringDataDialect, this content is just for mockup -->
+                                    <!-- Pagination created by SpringDataDialect, this content is just for mockup -->
                                     <li class="disabled"><a href="#" aria-label="Previous"><span
                                                 aria-hidden="true">&laquo;</span></a></li>
                                     <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>

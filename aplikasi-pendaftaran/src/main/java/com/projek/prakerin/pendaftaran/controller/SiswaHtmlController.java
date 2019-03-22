@@ -7,10 +7,13 @@ import java.util.Date;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,31 +24,36 @@ import org.springframework.web.bind.support.SessionStatus;
 
 
 @Controller
-@RequestMapping("/siswa")   
+@RequestMapping("/siswa")
 public class SiswaHtmlController {
     
     @Autowired
     private SiswaDao sd;
-    
+
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
-    
-     @RequestMapping("/list")
+
+    @RequestMapping("/list")
     public void daftarSiswa(Model m) {
         m.addAttribute("daftarSiswa", sd.findAll());
 
     }
-    
+
+    @GetMapping("/list")
+    public ModelMap daftarSiswa(Pageable page) {
+        return new ModelMap().addAttribute("daftarSiswa", sd.findAll(page));
+    }
+
     @RequestMapping("/hapus")
     public String hapus(@RequestParam("id") String id) {
         sd.deleteById(id);
         return "redirect:list";
     }
-    
+
     @RequestMapping(value = "/form", method = RequestMethod.GET)
     public String tampilkanForm(@RequestParam(value = "id", required = false) String id,
             Model m) {
@@ -70,5 +78,6 @@ public class SiswaHtmlController {
         sd.save(s);
         status.setComplete();
         return "redirect:list";
-    } 
+    }
+    
 }

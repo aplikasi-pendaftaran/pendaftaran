@@ -12,8 +12,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -28,30 +26,30 @@ public class SiswaDaoTest {
     @Autowired
     private SiswaDao sd;
     
-    @Autowired
+    @Autowired 
     private DataSource ds;
-    
-   
     
     @After
     public void hapusData() throws Exception{
-        String sql = "delete from siswa where nis = '112233'";
+        String sql = "delete from siswa where nis = '100002'";
         try (Connection c = ds.getConnection()) {
             c.createStatement().executeUpdate(sql);
         }
     }
+    
     
     @Test        
     public void testInsert() throws SQLException{
         Siswa s = new Siswa();
         s.setAgama("islam");
         s.setAlamat("bekasi");
+        s.setAsalSekolah("smp");
         s.setJenisKelamin("perempuan");
-        s.setNama("puteri");
-        s.setNilai("80");
+        s.setNama("putri");
+        s.setNilai("60");
         s.setNis("112233");        
         s.setTanggalLahir(new Date());
- 
+
         sd.save(s);
    
         
@@ -68,26 +66,27 @@ public class SiswaDaoTest {
         }
         
     }
-    @Test
+        
+        @Test
     public void testHitung(){
         Long jumlah = sd.count();
-        Assert.assertEquals(3L, jumlah.longValue());
+        Assert.assertEquals(2L, jumlah.longValue());
         
     }
     
     @Test
     public void testCariById(){
-        Siswa s = sd.findById("1001").get();
+        Siswa s = sd.findById("sw001").get();
         Assert.assertNotNull(s);
         Assert.assertEquals("alya", s.getNama());
-        Assert.assertEquals("171810220", s.getNis());
+        Assert.assertEquals("bekasi", s.getAlamat());
         
     }
-    
-    
         
-        
+    }
+            
+       
     
-   
     
-}
+    
+

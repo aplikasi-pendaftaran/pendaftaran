@@ -12,9 +12,9 @@ public class AplikasiPendaftaranApplication {
 		SpringApplication.run(AplikasiPendaftaranApplication.class, args);
 	}
         
-//        @Bean
-//        public SpringDataDialect springDataDialect() {
-//        return new SpringDataDialect();
-//    }
+        @Bean
+        public SpringDataDialect springDataDialect() {
+        return new SpringDataDialect();
+    }
 
 }
