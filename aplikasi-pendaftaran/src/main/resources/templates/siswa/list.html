@@ -17,7 +17,7 @@
                                 <th><a class="sorted" sd:pagination-sort="nama" >Nama</a></th>
                                 <th><a class="sorted" sd:pagination-sort="alamat" >Alamat</a></th>
                                 <th><a class="sorted" sd:pagination-sort="agama" >Agama</a></th>
-                                <th><a class="sorted" sd:pagination-sort="tanggal" >Tanggal Lahir</a></th>                               
+                                <th><a class="sorted" sd:pagination-sort="tanggalLahir" >Tanggal Lahir</a></th>                               
                                 <th><a class="sorted" sd:pagination-sort="jenisKelamin" >Jenis Kelamin</a></th>
                                 <th><a class="sorted" sd:pagination-sort="asalSekolah" >Asal Sekolah</a></th>
                                 <th><a class="sorted" sd:pagination-sort="nilai" >Nilai</a></th>
@@ -28,9 +28,9 @@
                             <tr th:each="s : ${daftarSiswa}">
                                 <td th:text="${s.nis}">poi</td>
                                 <td th:text="${s.nama}">poi0989@gmail.com</td>
+                                <td th:text="${s.alamat}">bekasii</td>
                                 <td th:text="${s.agama}">islam</td>
                                 <td th:text="${s.tanggalLahir}">2003-07-13</td>
-                                <td th:text="${s.alamat}">bekasii</td>
                                 <td th:text="${s.jenisKelamin}">perempuan</td>
                                 <td th:text="${s.asalSekolah}">tk berlian</td>
                                 <td th:text="${s.nilai}">50.22</td>
