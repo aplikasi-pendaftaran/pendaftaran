@@ -11,38 +11,66 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>NIS</th>
-                    <th>Nama</th>
-                    <th>TanggalLahir</th>
-                    <th>JenisKelamin</th>
-                    <th>Alamat</th>
-                    <th>Agama</th>
-                    <th>Nilai</th>
-                    <th>&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="s : ${daftarSiswa}">
-                    <td th:text="${s.nis}">171810222</td>
-                    <td th:text="${s.nama}">april</td>
-                    <td th:text="${s.tanggalLahir}">2002-04-05</td>
-                    <td th:text="${s.jenisKelamin}">perempuan</td>
-                    <td th:text="${s.alamat}">Bekasi</td>
-                    <td th:text="${s.agama}">Non muslim</td>
-                    <td th:text="${s.nilai}">60</td>
-                    <td>
-                        <a href="form.html" th:href="@{/siswa/form(id=${s.id})}">  Edit </a>
-                        | 
-                       <a href="view.html" th:href="@{/siswa/view(id=${s.id})}">  Lihat </a>
-                        | 
-                        <a href="hapus.html" th:href="@{/siswa/hapus(id=${s.id})}">  Hapus </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
+        <div th:fragment="content">
+
+            <div class="container">  
+                <div class="container-fluid">
+
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th><a class="sorted" sd:pagination-sort="nis" >NIS</a></th>
+                                <th><a class="sorted" sd:pagination-sort="nama" >Nama</a></th>
+                                <th><a class="sorted" sd:pagination-sort="tanggalLahir" >TanggalLahir</a></th>
+                                <th><a class="sorted" sd:pagination-sort="jenisKelamin" >JenisKelamin</a></th>
+                                <th><a class="sorted" sd:pagination-sort="alamat" >Alamat</a></th>
+                                <th><a class="sorted" sd:pagination-sort="agama" >Agama</a></th>
+                                <th><a class="sorted" sd:pagination-sort="nilai" >Nilai</a></th>
+                                <th>Pilihan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="s : ${daftarSiswa}">
+                                <td th:text="${s.nis}">171810222</td>
+                                <td th:text="${s.nama}">april</td>
+                                <td th:text="${s.tanggalLahir}">2002-04-05</td>
+                                <td th:text="${s.jenisKelamin}">perempuan</td>
+                                <td th:text="${s.alamat}">Bekasi</td>
+                                <td th:text="${s.agama}">Non muslim</td>
+                                <td th:text="${s.nilai}">60</td>
+                                <td>
+                                    <a href="form.html" th:href="@{/siswa/form(id=${s.id})}">  Edit </a>
+                                    | 
+                                    <a href="view.html" th:href="@{/siswa/view(id=${s.id})}">  Lihat </a>
+                                    | 
+                                    <a href="hapus.html" th:href="@{/siswa/hapus(id=${s.id})}">  Hapus </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div sd:pagination-summary="">info</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <nav class="pull-right">
+                                <ul class="pagination" sd:pagination="full">
+                                    <!-- Pagination created by SpringDataDialect, this content is just for mockup -->
+                                    <li class="disabled"><a href="#" aria-label="Previous"><span
+                                                aria-hidden="true">&laquo;</span></a></li>
+                                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">2 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">3 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">4 <span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="#">5 <span class="sr-only">(current)</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
