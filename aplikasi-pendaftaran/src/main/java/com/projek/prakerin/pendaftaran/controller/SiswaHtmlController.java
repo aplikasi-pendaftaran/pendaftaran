@@ -35,7 +35,7 @@ public class SiswaHtmlController {
     }
     
      @RequestMapping("/list")
-    public void daftarPeserta(Model m) {
+    public void daftarSiswa(Model m) {
         m.addAttribute("daftarSiswa", sd.findAll());
 
     }
