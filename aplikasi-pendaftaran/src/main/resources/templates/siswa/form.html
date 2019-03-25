@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
+        
+        <div th:fragment="content">
         <h1>Edit siswa</h1>
         <form action="#" th:action="@{/siswa/form}" th:object="${siswa}" 
                   method="post" enctype="multipart/form-data">
@@ -87,5 +89,6 @@
                 </table>
 
         </form>
+        </div>
     </body>
 </html>

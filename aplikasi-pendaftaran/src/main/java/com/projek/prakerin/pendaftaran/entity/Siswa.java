@@ -1,41 +1,50 @@
 package com.projek.prakerin.pendaftaran.entity;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Siswa {
-    @Id @GeneratedValue(generator = "uuid")
+
+    @Id
+    @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    
+
     @Column(unique = true)
     private String nis;
-    
+
     @Column(nullable = false)
     private String nama;
-    
+
     @Temporal(TemporalType.DATE)
     private Date tanggalLahir;
-    
+
     @Column(nullable = false)
     private String jenisKelamin;
-    
+
     @Column(nullable = false)
     private String alamat;
-    
+
     @Column(nullable = false)
     private String agama;
-    
+
     @Column(nullable = false)
     private String nilai;
 
+//    @Column(nullable = false)
+//    @OrderBy()
+//    private String nilai;
     public String getId() {
         return id;
     }
@@ -99,6 +108,5 @@ public class Siswa {
     public void setNilai(String nilai) {
         this.nilai = nilai;
     }
-    
-    
+
 }

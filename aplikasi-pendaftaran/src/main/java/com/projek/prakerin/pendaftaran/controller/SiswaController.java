@@ -2,9 +2,11 @@ package com.projek.prakerin.pendaftaran.controller;
 
 import com.projek.prakerin.pendaftaran.dao.SiswaDao;
 import com.projek.prakerin.pendaftaran.entity.Siswa;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,4 +59,6 @@ public class SiswaController {
         public void hapusSiswa(@PathVariable("id") String id){
             sd.deleteById(id);
         }
+        
+        
 }
