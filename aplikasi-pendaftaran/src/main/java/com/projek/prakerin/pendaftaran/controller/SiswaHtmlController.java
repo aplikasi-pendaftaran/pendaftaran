@@ -92,5 +92,4 @@ public class SiswaHtmlController {
         status.setComplete();
         return "redirect:list";
     }
-    
 }
