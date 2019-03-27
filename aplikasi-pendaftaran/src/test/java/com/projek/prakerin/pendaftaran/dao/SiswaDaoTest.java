@@ -1,9 +1,11 @@
 package com.projek.prakerin.pendaftaran.dao;
 
 import com.projek.prakerin.pendaftaran.entity.Siswa;
+import java.awt.print.Pageable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Date;
 import javax.sql.DataSource;
 import org.junit.After;
@@ -12,6 +14,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -66,6 +70,23 @@ public class SiswaDaoTest {
         }
         
     }
+    
+//    @Test
+//    public void testSortNilai()throws ParseException{
+//        
+//        
+//        PageRequest page = new PageRequest(0, 5);
+//
+//        
+//        Page<Siswa> hasil = sd.urutNilaiDesc(m, page);
+//        
+//        Assert.assertEquals(1L, hasil.getTotalElements());
+//        Assert.assertFalse(hasil.getContent().isEmpty());
+//        
+//        Siswa s = hasil.getContent().get(0);
+//        Assert.assertEquals(2L, s.getNilai());
+//        
+//    }
         
         @Test
     public void testHitung(){

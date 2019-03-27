@@ -40,6 +40,8 @@ public class SiswaHtmlController {
     @RequestMapping("/list")
     public void daftarSiswa(Model m) {
         m.addAttribute("daftarSiswa", sd.findAll());
+        
+      
 
     }
 
@@ -55,7 +57,7 @@ public class SiswaHtmlController {
     }
 
     @GetMapping("/view")
-    public ModelMap detaiSiswa(@RequestParam("id") String id) {
+    public ModelMap daftarSiswa(@RequestParam("id") String id) {
         return new ModelMap().addAttribute("detailSiswa", sd.findById(id).get());
     }
 
