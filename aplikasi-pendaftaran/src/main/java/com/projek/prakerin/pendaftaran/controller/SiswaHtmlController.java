@@ -47,6 +47,17 @@ public class SiswaHtmlController {
     public ModelMap daftarSiswa(Pageable page) {
         return new ModelMap().addAttribute("daftarSiswa", sd.findAll(page));
     }
+    
+    @RequestMapping("/view")
+    public void detailSiswa(Model m, @RequestParam("id") String id) {
+        m.addAttribute("detailSiswa", sd.findById(id).get());
+
+    }
+
+    @GetMapping("/view")
+    public ModelMap detaiSiswa(@RequestParam("id") String id) {
+        return new ModelMap().addAttribute("detailSiswa", sd.findById(id).get());
+    }
 
     @RequestMapping("/hapus")
     public String hapus(@RequestParam("id") String id) {

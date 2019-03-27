@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div th:fragment="content">
+        <h1>Detail Peserta</h1>
+        
+        <table class="table table-condensed table-striped" th:each="s : ${detailSiswa}">
+            
+            <tbody>
+                <tr>
+                    <td>Nis</td>
+                    <td>:</td>
+                    <td th:text="${s.nis}"></td>
+                </tr>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td th:text="${s.nama}"></td>
+                </tr>
+                
+                <tr>
+                    <td>tanggal lahir</td>
+                    <td>:</td>
+                    <td th:text="${s.tanggalLahir}"></td>
+                </tr>
+                
+                <tr>
+                    <td>alamat</td>
+                    <td>:</td>
+                    <td th:text="${s.alamat}"></td>
+                </tr>
+                
+                <tr>
+                    <td>agama</td>
+                    <td>:</td>
+                    <td th:text="${s.agama}"></td>
+                </tr>
+                
+                <tr>
+                    <td>jenis kelamin</td>
+                    <td>:</td>
+                    <td th:text="${s.jenisKelamin}"></td>
+                </tr>
+                
+                <tr>
+                    <td>asal sekolah</td>
+                    <td>:</td>
+                    <td th:text="${s.asalSekolah}"></td>
+                </tr>
+                
+                <tr>
+                    <td>nilai</td>
+                    <td>:</td>
+                    <td th:text="${s.nilai}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+       </div> 
+    </body>
+</html>
