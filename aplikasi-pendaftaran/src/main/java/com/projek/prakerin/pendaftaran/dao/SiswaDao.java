@@ -7,7 +7,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface SiswaDao extends PagingAndSortingRepository<Siswa, String> {
     
-    
-//    @OrderBy("nilai DESC")
-//    public List<Siswa> urutNilaiAsc();
 }

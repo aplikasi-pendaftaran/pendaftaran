@@ -2,8 +2,8 @@ package com.projek.prakerin.pendaftaran;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//import org.springframework.context.annotation.Bean;
-//import org.thymeleaf.dialect.springdata.SpringDataDialect;
+import org.springframework.context.annotation.Bean;
+import org.thymeleaf.dialect.springdata.SpringDataDialect;
 
 @SpringBootApplication
 public class AplikasiPendaftaranApplication {
