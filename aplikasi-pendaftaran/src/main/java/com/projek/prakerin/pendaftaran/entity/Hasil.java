@@ -44,8 +44,6 @@ public class Hasil {
     @Column(nullable = false)
     private String nilai;
     
-    @OrderBy("nilai DESC")
-    private List<Siswa> daftarSiswa = new ArrayList<>();
 
     public String getId() {
         return id;
