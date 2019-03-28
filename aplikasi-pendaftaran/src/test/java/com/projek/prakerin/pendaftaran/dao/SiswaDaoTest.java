@@ -71,27 +71,10 @@ public class SiswaDaoTest {
         
     }
     
-//    @Test
-//    public void testSortNilai()throws ParseException{
-//        
-//        
-//        PageRequest page = new PageRequest(0, 5);
-//
-//        
-//        Page<Siswa> hasil = sd.urutNilaiDesc(m, page);
-//        
-//        Assert.assertEquals(1L, hasil.getTotalElements());
-//        Assert.assertFalse(hasil.getContent().isEmpty());
-//        
-//        Siswa s = hasil.getContent().get(0);
-//        Assert.assertEquals(2L, s.getNilai());
-//        
-//    }
-        
         @Test
     public void testHitung(){
         Long jumlah = sd.count();
-        Assert.assertEquals(2L, jumlah.longValue());
+        Assert.assertEquals(3L, jumlah.longValue());
         
     }
     
@@ -103,6 +86,7 @@ public class SiswaDaoTest {
         Assert.assertEquals("bekasi", s.getAlamat());
         
     }
+    
         
     }
             
