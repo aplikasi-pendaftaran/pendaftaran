@@ -7,7 +7,7 @@
     <body>        
         <div th:fragment="content">
             <form name="f" th:action="@{/index}" method="POST">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin: 0 auto;">
                     <ol class="carousel-indicators">
 
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -56,35 +56,54 @@
                             mulai dari proses pendaftaran,proses seleksi hingga pengumuman hasil seleksi, yang dilakukan secara online dan berbasis waktu nyata (realtime).
                         </center>
                     </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5> Info PPDB</h5>
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Dinas Pendidikan (Disdik) Kota Bekasi mulai mempersiapkan petunjuk teknis 
+                                    (juknis) penerimaan peserta didik baru (PPDB) tahun 2019 sesuai dengan Permendikbud Nomor 51 Tahun 2018.
+                                    <br/>
+                                    Dalam Permendikbud tersebut mengatur petunjuk teknis PPDB 2019 yang ditetapkan
+                                    pemerintah daerah untuk mengatur kriteria, pembagian zona, dan pendataan siswa di setiap zona.</p>
+                                <footer class="blockquote-footer">Kepala Dinas Pendidikan Kota Bekasi</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <br/>
+                    
+                    <h3>Jalur Pendaftaran</h3>
                     <div class="card-group">
                         <div class="card" style="width: 18rem;">
-                            <img src="/images/logo.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">
-                                    Logo Kementerian Pendidikan dan Kebudayaan Indonesia
-                                    adalah simbol yang digunakan Kementerian Pendidikan dan Kebudayaan Indonesia dan insatansi di bawah naungannya.
-                                </p>
+                                <h5 class="card-title">Jalur Zonasi</h5>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</div>
+                                </div>
+                                <p class="card-text"> jalur prestasi dengan kuota maksimal 80 persen</p>
                             </div>
                         </div>
-                        
+
                         <div class="card" style="width: 18rem;">
-                            <img src="/images/baju.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">
-                                    eragam sekolah adalah seragam— seperangkat pakaian standar—yang dikenakan di lembaga pendidikan. Seragam sekolah umumnya dikenakan oleh pelajar sekolah dasar dan sekolah menengah di berbagai negara. 
-                                    Penggunaan seragam sekolah ditetapkan berdasarkan aturan berbusana di sekolah atau negara yang bersangkutan.
-                                </p>
+                                <h5 class="card-title">Jalur Prestasi</h5>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">15%</div>
+                                </div>
+                                <p class="card-text"> Jalur prestasi dengan kuota maksimal 15 persen</p>
                             </div>
                         </div>
-                        
+
                         <div class="card" style="width: 18rem;">
-                            <img src="/images/dasi.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">
-                                    Fungsi pertama dasi yang dipakai anak sekolah adalah sebagai identitas sekolah. 
-                                    Dengan memakai dasi pada seragam sekolah, seorang anak sekolah akan lebih mudah untuk dikenali, 
-                                    alih-alih hanya melalui badge sekolah yang kecil.
-                                </p>
+                                <h5 class="card-title">Jalur Farmasi</h5>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 5%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">5%</div>
+                                </div>
+                                <p class="card-text"> Jalur farmasi dengan kuota maksimal 5 persen</p>
                             </div>
                         </div>
                     </div>

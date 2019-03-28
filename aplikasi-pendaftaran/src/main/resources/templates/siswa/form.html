@@ -7,121 +7,120 @@
     </head>
     <body>
 
-        <div th:fragment="content">
-
-            <h1>Edit Siswa</h1>
-            
+        <div th:fragment="content" style="background-color: #e9ecef; border-radius: 15px; width: 80%; margin: auto;">
             <div class="container">
+                <div class="container">  <center><h1>Form Pendaftaran Siswa</h1></center> </div>
 
-            <form action="#" th:action="@{/siswa/form}" th:object="${siswa}" 
-                  method="post" enctype="multipart/form-data">
-                
+                <div class="container">
+
+                    <form action="#" th:action="@{/siswa/form}" th:object="${siswa}" 
+                          method="post" enctype="multipart/form-data">
+
 
                         <div class="form-group row">
-                          <label for="nis" class="col-sm-2 col-form-label">NIS</label>
+                            <label for="nis" class="col-sm-2 col-form-label">NIS</label>
                             <input type="text" class="form-control" th:field="*{nis}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan nis"/>                           
-                                <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('nis')}" th:errors="*{nis}">
-                                    NIS tidak boleh kosong
-                                </div>                            
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan nis"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('nis')}" th:errors="*{nis}">
+                                NIS tidak boleh kosong
+                            </div>                            
                         </div>
 
                         <div class="form-group row">
-                          <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                            <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                             <input type="text" class="form-control" th:field="*{nama}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan nama"/>                           
-                                <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('nama')}" th:errors="*{nama}">
-                                    NIS tidak boleh kosong
-                                </div>                            
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan nama"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('nama')}" th:errors="*{nama}">
+                                NIS tidak boleh kosong
+                            </div>                            
                         </div>
 
 
-                       <div class="form-group row">
-                          <label for="tanggalLahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                        <div class="form-group row">
+                            <label for="tanggalLahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
                             <input type="date" class="form-control" th:field="*{tanggalLahir}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan tanggal"/>                           
-                                <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('tanggalLahir')}" th:errors="*{tanggalLahir}">
-                                    NIS tidak boleh kosong
-                                </div>                            
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan tanggal"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('tanggalLahir')}" th:errors="*{tanggalLahir}">
+                                NIS tidak boleh kosong
+                            </div>                            
                         </div>
 
                         <div class="form-group row">
-                          <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+                            <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                             <input type="text" class="form-control" th:field="*{alamat}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan Alamat"/>                           
-                                <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}">
-                                    NIS tidak boleh kosong
-                                </div>                            
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan Alamat"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}">
+                                NIS tidak boleh kosong
+                            </div>                            
                         </div>
 
                         <div class="form-group row">
-                          <label for="agama" class="col-sm-2 col-form-label">Agama</label>
+                            <label for="agama" class="col-sm-2 col-form-label">Agama</label>
                             <input type="text" class="form-control" th:field="*{agama}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan Agama"/>                           
-                                <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('agama')}" th:errors="*{agama}">
-                                </div>                            
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan Agama"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('agama')}" th:errors="*{agama}">
+                            </div>                            
                         </div>
 
                         <div class="form-group row">
-                           <label for="jenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin :</label>
-                            <input type="radio" name="jenisKelamin" th:field="*{jenisKelamin}"
-                                       th:errorclass="is-invalid"
-                                        value="perempuan"/>Perempuan
-                                <br/>
-                                <input type="radio" name="jenisKelamin"  th:field="*{jenisKelamin}"
-                                       th:errorclass="is-invalid"
-                                        value="laki-laki"/>Laki-laki   
+                            <label for="jenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin :</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" 
+                                       name="inlineRadioOptions" id="inlineRadio1" value="option1"
+                                       th:field="*{jenisKelamin}"
+                                       th:errorclass="is-invalid"/>
                                 <div class="invalid-feedback" 
                                      th:if="${#fields.hasErrors('jenisKelamin')}" th:errors="*{jenisKelamin}">
-
+                                </div> 
+                                <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" 
+                                       th:field="*{jenisKelamin}"
+                                       th:errorclass="is-invalid" id="inlineRadio2" value="option2"/>
+                                <div class="invalid-feedback" 
+                                     th:if="${#fields.hasErrors('jenisKelamin')}" th:errors="*{jenisKelamin}">
                                 </div>
+                                <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+                            </div>
                         </div>
 
                         <div class="form-group row">
-                          <label for="asalSekolah" class="col-sm-2 col-form-label">Asal Sekolah</label>
+                            <label for="asalSekolah" class="col-sm-2 col-form-label">Asal Sekolah</label>
                             <input type="text" class="form-control" th:field="*{asalSekolah}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan asalSekolah"/>                           
-                                <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('asalSekolah')}" th:errors="*{asalSekolah}">
-                                </div>                            
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan asalSekolah"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('asalSekolah')}" th:errors="*{asalSekolah}">
+                            </div>                            
                         </div>
 
                         <div class="form-group row">
-                          <label for="nilai" class="col-sm-2 col-form-label">Nilai</label>
+                            <label for="nilai" class="col-sm-2 col-form-label">Nilai</label>
                             <input type="text" class="form-control" th:field="*{nilai}"
-                                       th:errorclass="is-invalid"
-                                       placeholder="masukan Nilai"/>                           
-                                <div class="invalid-feedback" 
-                                     th:if="${#fields.hasErrors('nilai')}" th:errors="*{nilai}">
-                                    Nilai harus ada
-                                </div>                            
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan Nilai"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('nilai')}" th:errors="*{nilai}">
+                                Nilai harus ada
+                            </div>                            
                         </div>
 
+                        <button class="btn btn-primary" type="submit">Kirim</button>
 
-
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td><input type="submit" value ="Kirim" /></td>
-                            <td>&nbsp;</td> 
-                        </tr>
-                    </tbody>
-
-
-
-            </form>
+                    </form>
+                </div>
             </div>
         </div>
-
     </body>
 </html>
