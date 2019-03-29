@@ -6,7 +6,9 @@
     </head>
     <body>        
         <div th:fragment="content">
-            <form name="f" th:action="@{/index}" method="POST">
+             <form action="#" th:action="@{/berita/index}" th:object="${berita}" 
+                          method="post" enctype="multipart/form-data">
+                 
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin: 0 auto;">
                     <ol class="carousel-indicators">
 
@@ -50,31 +52,14 @@
                 <div class="container">
                     <div class="jumbotron jumbotron-fluid">
                         <center>
-                            <h2> Selamat Datang di Pendaftaran Online</h2>
+                            <h2 th:field="*{judul}"></h2>
                             <br/>
-                            Pendaftaran Online, adalah sebuah sistem yang dirancang untuk melakukan otomasi seleksi Pendaftaran Peserta Didik Baru (PPDB), 
-                            mulai dari proses pendaftaran,proses seleksi hingga pengumuman hasil seleksi, yang dilakukan secara online dan berbasis waktu nyata (realtime).
-                        </center>
+                            <div class="contoh" th:field="*{isi}"></div> 
+                            <div class="bag" th:field="*{foto}"></div>
+                             <div class="bag1" th:field="*{tanggal_update}"></div>
+                           </center>
                     </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h5> Info PPDB</h5>
-                        </div>
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0">
-                                <p>Dinas Pendidikan (Disdik) Kota Bekasi mulai mempersiapkan petunjuk teknis 
-                                    (juknis) penerimaan peserta didik baru (PPDB) tahun 2019 sesuai dengan Permendikbud Nomor 51 Tahun 2018.
-                                    <br/>
-                                    Dalam Permendikbud tersebut mengatur petunjuk teknis PPDB 2019 yang ditetapkan
-                                    pemerintah daerah untuk mengatur kriteria, pembagian zona, dan pendataan siswa di setiap zona.</p>
-                                <footer class="blockquote-footer">Kepala Dinas Pendidikan Kota Bekasi</footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                    
-                    <br/>
-                    
+<!--              
                     <h3>Jalur Pendaftaran</h3>
                     <div class="card-group">
                         <div class="card" style="width: 18rem;">
@@ -107,6 +92,22 @@
                             </div>
                         </div>
                     </div>
+                    <br/>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5> Info PPDB</h5>
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Dinas Pendidikan (Disdik) Kota Bekasi mulai mempersiapkan petunjuk teknis 
+                                    (juknis) penerimaan peserta didik baru (PPDB) tahun 2019 sesuai dengan Permendikbud Nomor 51 Tahun 2018.
+                                    <br/>
+                                    Dalam Permendikbud tersebut mengatur petunjuk teknis PPDB 2019 yang ditetapkan
+                                    pemerintah daerah untuk mengatur kriteria, pembagian zona, dan pendataan siswa di setiap zona.</p>
+                                <footer class="blockquote-footer">Kepala Dinas Pendidikan Kota Bekasi</footer>
+                            </blockquote>
+                        </div>
+                    </div>             -->
                 </div>
         </div>
     </form>

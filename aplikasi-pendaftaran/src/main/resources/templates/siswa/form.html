@@ -104,6 +104,16 @@
                                  th:if="${#fields.hasErrors('asalSekolah')}" th:errors="*{asalSekolah}">
                             </div>                            
                         </div>
+                        
+                        <div class="form-group row">
+                            <label for="sekolahTujuan" class="col-sm-2 col-form-label">Sekolah Tujuan</label>
+                            <input type="text" class="form-control" th:field="*{sekolahTujuan}"
+                                   th:errorclass="is-invalid"
+                                   placeholder="masukan sekolahTujuan"/>                           
+                            <div class="invalid-feedback" 
+                                 th:if="${#fields.hasErrors('sekolahTujuan')}" th:errors="*{sekolahTujuan}">
+                            </div>                            
+                        </div>
 
                         <div class="form-group row">
                             <label for="nilai" class="col-sm-2 col-form-label">Nilai</label>

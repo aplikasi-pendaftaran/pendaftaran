@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -92,6 +93,15 @@ public class Siswa {
     public void setNilai(String nilai) {
         this.nilai = nilai;
     }
+
+    public String getSekolahTujuan() {
+        return sekolahTujuan;
+    }
+
+    public void setSekolahTujuan(String sekolahTujuan) {
+        this.sekolahTujuan = sekolahTujuan;
+    }
+    
  
     @Column(nullable = false, unique = true)
     @NotNull
@@ -123,6 +133,10 @@ public class Siswa {
 
     @Column(nullable = false)
     private String asalSekolah;
+    
+    @Column(nullable = false)
+    @NotBlank
+    private String sekolahTujuan;
 
     @Column(nullable = false)
     @NotNull

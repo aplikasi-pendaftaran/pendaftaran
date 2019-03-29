@@ -51,7 +51,8 @@ public class SiswaDaoTest {
         s.setJenisKelamin("perempuan");
         s.setNama("putri");
         s.setNilai("60");
-        s.setNis("112233");        
+        s.setNis("112233");    
+        s.setSekolahTujuan("smk");
         s.setTanggalLahir(new Date());
 
         sd.save(s);

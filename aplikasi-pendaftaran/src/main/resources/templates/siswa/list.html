@@ -20,6 +20,7 @@
                                 <th><a class="sorted" sd:pagination-sort="tanggalLahir">Tanggal Lahir</a></th>                               
                                 <th><a class="sorted" sd:pagination-sort="jenisKelamin">Jenis Kelamin</a></th>
                                 <th><a class="sorted" sd:pagination-sort="asalSekolah">Asal Sekolah</a></th>
+                                <th><a class="sorted" sd:pagination-sort="sekolahTujuan">Sekolah Tujuan</a></th>
                                 <th><a class="sorted" sd:pagination-sort="nilai">Nilai</a></th>
                                 <th><a class="sorted" sd:pagination-sort="lainnya">Lainnya</a></th>
                             </tr>
@@ -33,6 +34,7 @@
                                 <td th:text="${s.tanggalLahir}">2003-07-13</td>
                                 <td th:text="${s.jenisKelamin}">perempuan</td>
                                 <td th:text="${s.asalSekolah}">tk berlian</td>
+                                <td th:text="${s.sekolahTujuan}">smk jauh</td>
                                 <td th:text="${s.nilai}">50.22</td>
                                 <td>
                                     <a href="form.html" th:href="@{/siswa/form(id=${s.id})}">
