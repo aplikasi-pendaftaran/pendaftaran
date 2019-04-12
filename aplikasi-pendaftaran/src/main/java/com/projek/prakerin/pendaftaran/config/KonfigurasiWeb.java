@@ -11,7 +11,9 @@ public class KonfigurasiWeb extends WebMvcConfigurerAdapter {
     
     @Override
     public void addViewControllers(ViewControllerRegistry registry){
-        registry.addViewController("/berita/index").setViewName("/index");
+        registry.addViewController("/templates/index").setViewName("/index");
+        registry.addViewController("/templates/tatacara").setViewName("/tatacara");
+
 
     }
     @Override

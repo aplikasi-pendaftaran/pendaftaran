@@ -76,7 +76,7 @@
                             <label for="jenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin :</label>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" 
-                                       name="inlineRadioOptions" id="inlineRadio1" value="option1"
+                                       name="inlineRadioOptions" id="inlineRadio1" value="Laki-Laki"
                                        th:field="*{jenisKelamin}"
                                        th:errorclass="is-invalid"/>
                                 <div class="invalid-feedback" 
@@ -87,7 +87,7 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" 
                                        th:field="*{jenisKelamin}"
-                                       th:errorclass="is-invalid" id="inlineRadio2" value="option2"/>
+                                       th:errorclass="is-invalid" id="inlineRadio2" value="Perempuan"/>
                                 <div class="invalid-feedback" 
                                      th:if="${#fields.hasErrors('jenisKelamin')}" th:errors="*{jenisKelamin}">
                                 </div>

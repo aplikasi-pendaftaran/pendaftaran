@@ -115,10 +115,12 @@ public class Siswa {
     private String nama;
 
     @Column(nullable = false)
+    @NotEmpty
     private String alamat;
     
     @Column(nullable = false)
     @NotNull 
+    @NotEmpty
     private String agama;
 
     @Column(nullable = false)
@@ -129,17 +131,20 @@ public class Siswa {
 
     @Column(nullable = false)
     @NotNull
+    @NotBlank
     private String jenisKelamin;
 
     @Column(nullable = false)
+    @NotEmpty
     private String asalSekolah;
     
     @Column(nullable = false)
-    @NotBlank
+    @NotEmpty
     private String sekolahTujuan;
 
     @Column(nullable = false)
     @NotNull
+    @NotEmpty
     private String nilai;
 
 }
